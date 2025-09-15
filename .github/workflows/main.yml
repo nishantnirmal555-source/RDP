@@ -1,21 +1,21 @@
-name: Saturn RDP
+name: Saturn Test Runner
 
 on:
   workflow_dispatch:
 
 jobs:
-  rdp:
+  test:
     runs-on: self-hosted
     steps:
       - name: Repo Checkout
         uses: actions/checkout@v3
 
-      - name: System Info
+      - name: Test Script
         run: |
+          echo "✅ Saturn Runner is Working"
           uname -a || ver
           whoami
-          pwd
-          ls -la
+          date
 
-      - name: Keep Runner Alive (1 Hour)
-        run: sleep 3600
+      - name: Keep Alive 30 min
+        run: sleep 1800
