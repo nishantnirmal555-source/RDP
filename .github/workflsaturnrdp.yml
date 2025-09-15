@@ -1,0 +1,21 @@
+name: Saturn RDP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  rdp:
+    runs-on: self-hosted
+    steps:
+      - name: Repo Checkout
+        uses: actions/checkout@v3
+
+      - name: System Info
+        run: |
+          uname -a || ver
+          whoami
+          pwd
+          ls -la
+
+      - name: Keep Runner Alive (1 Hour)
+        run: sleep 3600
